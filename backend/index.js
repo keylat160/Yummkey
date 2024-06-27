@@ -13,7 +13,7 @@ app.get('/', (req, res) => {
 })
 
 //controllers
-app.use('/recipes', require('./controllers/recipes'));
+app.use("api")
 
 //port
 app.listen(port, async () => {
