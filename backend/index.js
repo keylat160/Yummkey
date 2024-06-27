@@ -16,10 +16,15 @@ app.get('/', (req, res) => {
 app.use('/recipes', require('./controllers/recipes'));
 
 //port
-app.listen(port, () => {
-    console.log(`server is running on port ${port}`);
-    console.log(`Database host: ${dbHost}`);
-});
+app.listen(port, async () => {
+    try {
+    await sequelize.authenticate();
+    console.log('connection has been established sucessfully.');
+} catch(error) {
+    console.log('Unable to connect to the database', error);
+}
+console.log(`Example app listening on port ${port}`)
+})
 
 //user table
 //name, email, password
