@@ -4,13 +4,21 @@ import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 //import NavDropdown from 'react-bootstrap/NavDropdown';
 import { UserContext } from "../context/UserContext";
+import Register from './Register';
+import Login from './Login';
 
 
 const Navigation = () => {
   const [ showReg, setShowReg ] = useState(false);
   const [ showLogin, setShowLogin ] = useState(false);
-  const [ userData, setUserData ] = useContext(UserContext);
+  const userContext = useContext(UserContext);
+   if (!userContext) {
+    throw new Error("Navigation must be used within a UserContext.Provider");
+   }
 
+   const [userData, setUserData] = userContext;
+
+   
   const handleLogout = () => {
     console.log("logout");
     if (setUserData)

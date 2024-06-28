@@ -7,11 +7,11 @@ export const UserContext = createContext<
 >([
   {
     id: 0,
-    firstName: "",
-    lastName: "",
-    email: "",
-    createdAt:"",
-    updatedAt: ""
+    firstName: "string",
+    lastName: "string",
+    email: "string",
+    createdAt: "date",
+    updatedAt: "date"
   },
   null,
 ]);

@@ -5,9 +5,15 @@ import axios from "axios";
 import { UserContext } from "../context/UserContext";
 
 const Register = (props: ModalProps) => {
-  const [ _, setUserData ] = useContext(UserContext)
+  const userContext = useContext(UserContext);
+   if(!userContext) {
+    throw new Error("Register must be used within a UserContext.provider");
+   }
+
+   const [, setUserData] = userContext;
   const [userInfo, setUserInfo] = useState({
-    name: "",
+    firstName: "",
+    lastName: "",
     email: "",
     password: "",
   });
@@ -20,7 +26,7 @@ const Register = (props: ModalProps) => {
       setShowError(false);
       console.log(userInfo)
       const { data } = await axios.post("/api/users/register", userInfo);
-      if (setUserData) setUserData(data)
+      setUserData(data)
       props.onHide();
     } catch (error) {
       console.error(error);
@@ -46,12 +52,28 @@ const Register = (props: ModalProps) => {
             </label>
             <input
               className="form-control"
-              id="reg-name"
-              name="name"
-              type="name"
-              value={userInfo.name}
+              id="reg-first-name"
+              name="firstName"
+              type="text"
+              value={userInfo.firstName}
               onChange={(e) =>
-                setUserInfo({ ...userInfo, name: e.target.value })
+                setUserInfo({ ...userInfo, firstName: e.target.value })
+              }
+              required
+            />
+          </div>
+          <div className="mt-3">
+            <label className="form-label" htmlFor="reg-last-name">
+              Last Name
+            </label>
+            <input
+              className="form-control"
+              id="reg-last-name"
+              name="lastName"
+              type="text"
+              value={userInfo.lastName}
+              onChange={(e) =>
+                setUserInfo({ ...userInfo, lastName: e.target.value })
               }
               required
             />
