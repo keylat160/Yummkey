@@ -25,7 +25,7 @@ const Register = (props: ModalProps) => {
     try {
       setShowError(false);
       console.log(userInfo)
-      const { data } = await axios.post("/api/users/register", userInfo);
+      const { data } = await axios.post("/api/users/Register", userInfo);
       setUserData(data)
       props.onHide();
     } catch (error) {
@@ -114,9 +114,6 @@ const Register = (props: ModalProps) => {
           <button className="btn btn-primary mt-3">Register</button>
         </form>
       </Modal.Body>
-      {/* <Modal.Footer>
-        <Button onClick={props.onHide}>Close</Button>
-      </Modal.Footer> */}
     </Modal>
   );
 };

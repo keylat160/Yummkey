@@ -3,14 +3,15 @@ import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 //import NavDropdown from 'react-bootstrap/NavDropdown';
+import { Register, Login } from "./index";
+import { Recipes } from "./index";
 import { UserContext } from "../context/UserContext";
-import Register from './Register';
-import Login from './Login';
 
 
 const Navigation = () => {
   const [ showReg, setShowReg ] = useState(false);
   const [ showLogin, setShowLogin ] = useState(false);
+  const [ showRecipes, setShowRecipes ] = useState(false);
   const userContext = useContext(UserContext);
    if (!userContext) {
     throw new Error("Navigation must be used within a UserContext.Provider");
@@ -56,7 +57,15 @@ const Navigation = () => {
                       className="btn btn-link"
                       onClick={() => setShowLogin(true)}
                     >
-                      Log In
+                      Recipes
+                    </button>
+                  </Nav.Link>
+                  <Nav.Link>
+                    <button
+                      className="btn btn-link"
+                      onClick={() => setShowReg(true)}
+                    >
+                      Register
                     </button>
                   </Nav.Link>
                 </>
@@ -67,6 +76,7 @@ const Navigation = () => {
       </Navbar>
       <Register onHide={() => setShowReg(false)} show={showReg} />
       <Login onHide={() => setShowLogin(false)} show={showLogin} />
+      <Recipes onHide={() => setShowRecipes(false)} show={showRecipes} />
     </>
   );
 }

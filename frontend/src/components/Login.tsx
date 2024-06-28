@@ -75,9 +75,6 @@ const Login = (props: ModalProps) => {
           <button className="btn btn-primary mt-3">Log In</button>
         </form>
       </Modal.Body>
-      {/* <Modal.Footer>
-        <Button onClick={props.onHide}>Close</Button>
-      </Modal.Footer> */}
     </Modal>
   );
 };
