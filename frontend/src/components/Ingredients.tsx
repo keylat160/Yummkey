@@ -1,3 +1,5 @@
-import ThemeProvider from 'react-bootstrap/ThemeProvider'
+function Ingredients() {
+    return 
+ }
 
 export default Ingredients;

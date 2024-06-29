@@ -1,8 +1,46 @@
+import React, { useState, useEffect, useContext } from 'react';
 import Card from 'react-bootstrap/Card';
 import CardGroup from 'react-bootstrap/CardGroup';
+import axios from "axios";
+import { UserContext } from "../context/UserContext";
 
-function Recipes() {
+interface Recipe {
+    id: number;
+    dataType: string;
+}
+
+const Recipes = () => {
+    const [Recipes, setRecipes] = useState<Recipe[]>([]);
+    const userContext = useContext(UserContext);
+    const [showRecipes, setShowRecipes] = useState(false);
+  
+    if (!userContext) {
+      throw new Error("Recipes must be used within a UserContext.Provider");
+    }
+  
+    const [userData, setUserData] = userContext;
+
+    useEffect(() => {
+        const fetchRecipes = async () => {
+          try {
+            const { data } = await axios.get('/api/recipes');
+            setRecipes(data);
+          } catch (error) {
+            console.error('Error fetching recipes', error);
+          }
+        };
+    
+        if (showRecipes) {
+          fetchRecipes();
+        }
+      }, [showRecipes]);
+
   return (
+    <div>
+        <button className="btn btn-primary" onClick={() => setShowRecipes(!showRecipes)}>
+        {showRecipes ? 'Hide Recipes' : 'Show Recipes'}
+      </button>
+      {showRecipes && (
     <CardGroup className="CardGroup">
      <Card className="Card">
       <Card.Img variant="top" src="https://www.saltandlavender.com/wp-content/uploads/2019/03/creamy-mushroom-chicken-1-768x1088.jpg" alt="creamy mushroom by salt&Lavender" height="200px" />
@@ -53,6 +91,8 @@ function Recipes() {
       </Card.Footer>
     </Card>
     </CardGroup>
+      )}
+ </div>
 );
 }
 

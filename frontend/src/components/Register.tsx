@@ -6,11 +6,11 @@ import { UserContext } from "../context/UserContext";
 
 const Register = (props: ModalProps) => {
   const userContext = useContext(UserContext);
-   if(!userContext) {
-    throw new Error("Register must be used within a UserContext.provider");
-   }
+  if (!userContext) {
+    throw new Error("Register must be used within a UserContext.Provider");
+  }
 
-   const [, setUserData] = userContext;
+  const [, setUserData] = userContext;
   const [userInfo, setUserInfo] = useState({
     firstName: "",
     lastName: "",
@@ -21,12 +21,12 @@ const Register = (props: ModalProps) => {
   const [showError, setShowError] = useState(false);
 
   const handleSubmit = async (e: FormEvent) => {
-    e?.preventDefault();
+    e.preventDefault();
     try {
       setShowError(false);
-      console.log(userInfo)
-      const { data } = await axios.post("/api/users/Register", userInfo);
-      setUserData(data)
+      console.log(userInfo);
+      const { data } = await axios.post("/api/users/register", userInfo);
+      setUserData(data);
       props.onHide();
     } catch (error) {
       console.error(error);
@@ -37,7 +37,6 @@ const Register = (props: ModalProps) => {
   return (
     <Modal
       {...props}
-      // size="lg"
       aria-labelledby="register-modal-title"
       centered
     >
@@ -47,8 +46,8 @@ const Register = (props: ModalProps) => {
       <Modal.Body>
         <form onSubmit={handleSubmit}>
           <div>
-            <label className="form-label" htmlFor="reg-name">
-              Name
+            <label className="form-label" htmlFor="reg-first-name">
+              First Name
             </label>
             <input
               className="form-control"

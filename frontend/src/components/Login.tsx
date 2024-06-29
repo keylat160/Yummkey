@@ -5,6 +5,12 @@ import axios from "axios";
 import { UserContext } from "../context/UserContext";
 
 const Login = (props: ModalProps) => {
+    const userContext = useContext(UserContext);
+
+  if (!userContext) {
+    throw new Error("Login must be used within a UserContext.Provider");
+  }
+
   const [ _, setUserData ] = useContext(UserContext)
   const [userInfo, setUserInfo] = useState({
     email: "",
@@ -31,11 +37,11 @@ const Login = (props: ModalProps) => {
     <Modal
       {...props}
       // size="lg"
-      aria-labelledby="register-modal-title"
+      aria-labelledby="Login-modal-title"
       centered
     >
       <Modal.Header closeButton>
-        <Modal.Title id="register-modal-title">Login</Modal.Title>
+        <Modal.Title id="Login-modal-title">Login</Modal.Title>
       </Modal.Header>
       <Modal.Body>
         <form onSubmit={handleSubmit}>
@@ -45,7 +51,7 @@ const Login = (props: ModalProps) => {
             </label>
             <input
               className="form-control"
-              id="reg-email"
+              id="login-email"
               name="email"
               type="email"
               value={userInfo.email}
@@ -61,7 +67,7 @@ const Login = (props: ModalProps) => {
             </label>
             <input
               className="form-control"
-              id="reg-password"
+              id="login-password"
               name="password"
               type="password"
               value={userInfo.password}
