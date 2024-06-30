@@ -28,6 +28,7 @@ body {
   place-items: center;
   min-width: 320px;
   min-height: 100vh;
+  
 }
 
 h1 {
@@ -47,7 +48,7 @@ button {
   transition: border-color 0.25s;
 }
 button:hover {
-  border-color: #402d49;
+  color: white;
 }
 button:focus,
 button:focus-visible {
@@ -60,7 +61,7 @@ button:focus-visible {
     background-color: white;
   }
   a:hover {
-    color: #ebebf1;
+    color: #2222f0;
   }
   button {
     background-color: #3d6fb6;
@@ -99,4 +100,19 @@ svg text {
   }
   
 }
-
+.CardGroup {
+  display: flex;
+  width: 100%;
+  margin: 0 auto;
+  padding: 25px;
+  justify-content:center;
+  align-items: center;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  }
+  
+  .Card {
+  display: block;
+  padding: 25px;
+  justify-content: space-evenly;
+  
+  }

@@ -2,7 +2,9 @@ import React, { useState, useEffect, useContext } from 'react';
 import Card from 'react-bootstrap/Card';
 import CardGroup from 'react-bootstrap/CardGroup';
 import axios from "axios";
+//import { Link } from 'react-router-dom';
 import { UserContext } from "../context/UserContext";
+
 
 interface Recipe {
     id: number;
@@ -47,7 +49,7 @@ const Recipes = () => {
       <Card.Body>
         <Card.Title>Chicken in cream of mushrooms</Card.Title>
         <Card.Text>
-         full recipe here!
+         <a href="/creamy chicken">full recipe here! </a>
         </Card.Text>
       </Card.Body>
       <Card.Footer>
@@ -59,7 +61,7 @@ const Recipes = () => {
       <Card.Body>
         <Card.Title>Green Spaghetti</Card.Title>
         <Card.Text>
-         full recipe here!
+        <a href="/green spaghetti">full recipe here!</a>
         </Card.Text>
       </Card.Body>
       <Card.Footer>
@@ -71,7 +73,7 @@ const Recipes = () => {
       <Card.Body>
         <Card.Title>Orange chicken</Card.Title>
         <Card.Text>
-         Full recipe here!
+        <a href="/orange chicken">Full recipe here!</a>
         </Card.Text>
       </Card.Body>
       <Card.Footer>
@@ -83,7 +85,7 @@ const Recipes = () => {
       <Card.Body>
         <Card.Title>Birria Tacos</Card.Title>
         <Card.Text>
-         Full recipe here!
+        <a href="/birria tacos">Full recipe here!</a>
         </Card.Text>
       </Card.Body>
       <Card.Footer>
@@ -95,7 +97,6 @@ const Recipes = () => {
  </div>
 );
 }
-
 
 
 export default Recipes;
