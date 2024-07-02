@@ -1,6 +1,8 @@
 import { useContext } from 'react'
 import App from '../App'
 import { Recipes, Navigation } from "../components"
+import Carousel from 'react-bootstrap/Carousel';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import { UserContext } from "../context/UserContext"
 
 const Home = () => {
@@ -27,12 +29,49 @@ const Home = () => {
  </text>
  </svg>
 </div>
-        <img src='https://images.pexels.com/photos/1640777/pexels-photo-1640777.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'
-        alt='food pic from pexels'/>
         {userData.id ? <Recipes /> : null}
     </main>
-    </>
-  )
-}
+
+      <Carousel data-bs-theme="dark">
+        <Carousel.Item>
+          <img 
+            className="d-block w-100"
+            src="https://images.pexels.com/photos/2097090/pexels-photo-2097090.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+            alt="First slide"
+          />
+          <Carousel.Caption>
+            <h5>Salad</h5>
+            <p>Healthy Recipes coming...</p>
+          </Carousel.Caption>
+        </Carousel.Item>
+        <Carousel.Item>
+          <img
+            className="d-block w-100"
+            src="https://images.pexels.com/photos/769969/pexels-photo-769969.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+            alt="Second slide"
+          />
+          <Carousel.Caption>
+            <h5>Pasta</h5>
+            <p>Italian Cuisine.</p>
+          </Carousel.Caption>
+        </Carousel.Item>
+        <Carousel.Item>
+          <img
+            className="d-block w-100"
+            src="https://images.pexels.com/photos/699544/pexels-photo-699544.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+            alt="Third slide"
+          />
+          <Carousel.Caption>
+            <h5>Seafood</h5>
+            <p>
+              Quick and easy recipes.
+            </p>
+          </Carousel.Caption>
+        </Carousel.Item>
+      </Carousel>
+      </>
+    );
+  }
+
 
 export default () => <App><Home /></App>

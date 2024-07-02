@@ -2,7 +2,7 @@ import React, { useState, useEffect, useContext } from 'react';
 import Card from 'react-bootstrap/Card';
 import CardGroup from 'react-bootstrap/CardGroup';
 import axios from "axios";
-//import { Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { UserContext } from "../context/UserContext";
 
 
