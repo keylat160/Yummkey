@@ -26,7 +26,7 @@ const Navigation = () => {
     if (setUserData)
       setUserData({
         id: 0,
-        name: "",
+        name:"",
         email: "",
         createdAt: "",
         updatedAt: "",

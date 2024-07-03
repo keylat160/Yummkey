@@ -50,6 +50,8 @@ Ingredients and Directions should be in the database.
 
 Had issues with connecting the front-end with the back-end.
 
+Also I didn't have enough time to make a route for my Error404. 
+
 
 ## I Want to add
 In the future I would like to add more recipes and also a comment section where people can comment what they think about the recipes and rate them.

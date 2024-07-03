@@ -26,7 +26,7 @@ const Register = (props: ModalProps) => {
       setShowError(false);
       console.log(userInfo);
       const { data } = await axios.post("/api/users/register", userInfo);
-      setUserData(data);
+      if(setUserData) setUserData (data);
       props.onHide();
     } catch (error) {
       console.error(error);

@@ -12,6 +12,6 @@ export const UserContext = createContext<
     email: "string",
     createdAt: "date",
     updatedAt: "date"
-  },
+   },
   null,
 ]);
