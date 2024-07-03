@@ -3,7 +3,7 @@ Welcome to "Yummkey" a Recipe website that you can register and login to see new
 
 ## What Inspired me?
 Coming from a very traditional Mexican household my mom wanted me to cook at a very young age and I hated it. So when I moved out I had no choice but to learn. 
-Little by little I started to like it at the point that I was cooking 3 home cook meals a day.
+Little by little I started to like it, there was a point that I was cooking 3 home cook meals a day.
 The Recipes that I have here are meals I usually cook in the daily basis.
 
 ## Description
@@ -15,7 +15,7 @@ The Recipes that I have here are meals I usually cook in the daily basis.
 
  **Differents food from all over the countries.**
 
- **Login and explore the variaty of food with one click away.**
+ **Login and explore the variaty of food with just one click away.**
 
  ## Technologies
 **Images from pexels "https://www.pexels.com/"**
