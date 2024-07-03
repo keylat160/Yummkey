@@ -8,14 +8,14 @@ The Recipes that I have here are meals I usually cook in the daily basis.
 
 ## Description
 
-**A Website that you can see free recipes for any type of event**
+**A Website that you can see free recipes for any type of event.**
 
 
- **Quick and easy recipes for the family or reunion with friends**
+ **Quick and easy recipes for the family or reunion with friends.**
 
- **Differents food from all over the countries**
+ **Differents food from all over the countries.**
 
- **Login and explore the variaty of food with one click away**
+ **Login and explore the variaty of food with one click away.**
 
  ## Technologies
 **Images from pexels "https://www.pexels.com/"**
@@ -48,7 +48,7 @@ This Project requires the following:
 ## Issues
 Ingredients and Directions should be in the database.
 
-Had issues with connecting the front-end with the backend.
+Had issues with connecting the front-end with the back-end.
 
 
 ## I Want to add

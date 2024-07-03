@@ -36,12 +36,12 @@ const Home = () => {
         <Carousel.Item>
           <img 
             className="d-block w-100"
-            src="https://images.pexels.com/photos/2097090/pexels-photo-2097090.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+            src="https://images.pexels.com/photos/70497/pexels-photo-70497.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
             alt="First slide"
           />
           <Carousel.Caption>
-            <h5>Salad</h5>
-            <p>Healthy Recipes coming...</p>
+            <h5>Burgers</h5>
+            <p>American food</p>
           </Carousel.Caption>
         </Carousel.Item>
         <Carousel.Item>
